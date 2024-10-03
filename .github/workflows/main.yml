@@ -27,7 +27,7 @@ jobs:
         with:
           task-definition: file.json
           container-name: try
-          image: ${{ steps.build-image.outputs.image }}    
+          image: ${{ secrets.ECR_IMAGE_URI }}    
       - name: Deploy Amazon ECS task definition
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
